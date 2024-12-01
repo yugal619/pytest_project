@@ -1,0 +1,20 @@
+[
+  {
+    "username": "admin",
+    "password": "password",
+    "comment": "comment 1",
+    "file_path": "data/demo.html",
+    "checkbox_value": "cb1",
+    "multiple_select_text": "Selection Item 1",
+    "drop_down_option": "dd1"
+  },
+  {
+    "username": "new admin",
+    "password": "password",
+    "comment": "comment 2",
+    "file_path": "data/demo.html",
+    "checkbox_value": "cb2",
+    "multiple_select_text": "Selection Item 2",
+    "drop_down_option": "dd2"
+  }
+]
