@@ -1,15 +1,13 @@
-# pytest_project
-Demo on use of pytest for UI Automation using POM
 
-🚀 Python Selenium Automation Framework (Pytest + POM Model)
+# 🚀 Python Selenium Automation Framework (Pytest + POM Model)
 
-Project Overview
+# Project Overview
 This is a robust UI Test Automation Framework built using Python, Pytest, and Selenium. The project follows the Page Object Model (POM) design pattern to ensure code reusability, readability, and maintainability.
 
-Test cases are automated for the sample website:
-🔗 Test Pages
+# Test cases are automated for the sample website:
+Test Pages
 
-Key Features :
+# Key Features :
 🛠️ Python + Pytest Framework: Leveraging the power of Pytest for structuring and executing test cases.
 
 📄 Page Object Model (POM): Ensures clean and maintainable code by separating page interactions from test scripts.
@@ -24,26 +22,32 @@ Key Features :
 
 📊 HTML Test Report: Pytest-HTML/Allure used to generate professional test execution reports.
 
-Tech Stack
+# Tech Stack
 Programming Language: Python
+
 Test Framework: Pytest
+
 Browser Automation: Selenium
+
 Design Pattern: Page Object Model (POM)
+
 Reporting: Allure Reports / Pytest-HTML
+
 Logging: Python's Logging Module
 
-Installation and Setup
+# Installation and Setup
 Follow these steps to set up and execute the project on your local machine:
 
-Prerequisites
+# Prerequisites
 Python 3.8+
 Git
 
 1. Clone the Repository
 git clone https://github.com/yugal619/pytest_project.git
+
 cd <YOUR_PROJECT_NAME>
 
-2. Install Dependencies
+3. Install Dependencies
 Install all required packages listed in requirements.txt:
 
 pip install -r requirements.txt
@@ -57,24 +61,26 @@ Run Specific Tests:
 pytest -m "smoke"          # Run tests marked as smoke
 pytest -k "home_page"      # Run tests containing 'home_page' in name
 
-Features in Detail
-1. Page Object Model (POM)
-Each web page is represented as a class under the pages/ directory. This ensures reusability of page-specific methods.
 
-
-Contributing
+# Contributing
 Contributions are welcome! If you have suggestions or ideas to enhance the framework, feel free to create a Pull Request.
 
-Contact
+# Contact
 📧 Email: yugal.sinha619@gmail.com
-🔗 LinkedIn: https://www.linkedin.com/in/yugal-sinha-629941124/
 
-SEO Optimized Keywords
+LinkedIn: https://www.linkedin.com/in/yugal-sinha-629941124/
+
+# SEO Optimized Keywords
 To ensure visibility on search engines like Google:
 
 Python Selenium Automation Framework
+
 Pytest Framework with POM
+
 Selenium Test Automation
+
 Screenshot Mechanism in Pytest
+
 Test Reporting with Pytest-HTML and Allure
+
 Automated UI Testing using Python
