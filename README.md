@@ -1,13 +1,13 @@
 
 # 🚀 Python Selenium Automation Framework (Pytest + POM Model)
 
-# Project Overview
+## Project Overview
 This is a robust UI Test Automation Framework built using Python, Pytest, and Selenium. The project follows the Page Object Model (POM) design pattern to ensure code reusability, readability, and maintainability.
 
-# Test cases are automated for the sample website:
-Test Pages
+## Test cases are automated for the sample website:
+🔗 [Website link](https://testpages.eviltester.com/styled/index.html)
 
-# Key Features :
+## Key Features :
 🛠️ Python + Pytest Framework: Leveraging the power of Pytest for structuring and executing test cases.
 
 📄 Page Object Model (POM): Ensures clean and maintainable code by separating page interactions from test scripts.
@@ -22,55 +22,61 @@ Test Pages
 
 📊 HTML Test Report: Pytest-HTML/Allure used to generate professional test execution reports.
 
-# Tech Stack
-Programming Language: Python
+## Tech Stack
 
-Test Framework: Pytest
+- Programming Language: Python
 
-Browser Automation: Selenium
+- Test Framework: Pytest
 
-Design Pattern: Page Object Model (POM)
+- Browser Automation: Selenium
 
-Reporting: Allure Reports / Pytest-HTML
+- Design Pattern: Page Object Model (POM)
 
-Logging: Python's Logging Module
+- Reporting: Allure Reports / Pytest-HTML
 
-# Installation and Setup
+- Logging: Python's Logging Module
+
+## Installation and Setup
 Follow these steps to set up and execute the project on your local machine:
 
-# Prerequisites
+## Prerequisites
 Python 3.8+
 Git
 
 1. Clone the Repository
-git clone https://github.com/yugal619/pytest_project.git
+   ```
+   git clone https://github.com/yugal619/pytest_project.git
 
-cd <YOUR_PROJECT_NAME>
-
+   cd <YOUR_PROJECT_NAME>
+   ```
 3. Install Dependencies
+
 Install all required packages listed in requirements.txt:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
+
 
 3. Run Test Cases
 Execute test cases using Pytest:
-
+```
 pytest tests/ --html=reports/report.html --self-contained-html
-
+```
 Run Specific Tests:
+
+```
 pytest -m "smoke"          # Run tests marked as smoke
 pytest -k "home_page"      # Run tests containing 'home_page' in name
+```
 
-
-# Contributing
+## Contributing
 Contributions are welcome! If you have suggestions or ideas to enhance the framework, feel free to create a Pull Request.
 
-# Contact
-📧 Email: yugal.sinha619@gmail.com
+## Contact
 
-LinkedIn: https://www.linkedin.com/in/yugal-sinha-629941124/
+- 📧 Email: yugal.sinha619@gmail.com
+- LinkedIn: https://www.linkedin.com/in/yugal-sinha-629941124/
 
-# SEO Optimized Keywords
+### SEO Optimized Keywords
 To ensure visibility on search engines like Google:
 
 Python Selenium Automation Framework
