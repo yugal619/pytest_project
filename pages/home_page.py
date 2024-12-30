@@ -3,6 +3,13 @@ from selenium.webdriver.common.by import By
 
 
 class HomePage(BasePage):
+    """
+    This class represents the Home Page on Test Pages.
+    It provides methods to interact with various form elements and retrieve their values.
+
+    Attributes:
+        driver (WebDriver): The WebDriver instance used to interact with the page.
+    """
 
     # Locators
     BASIC_WEB_PAGE_EXAMPLE = (By.ID, 'basicpagetest')

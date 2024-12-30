@@ -5,5 +5,6 @@ from utils.selenium_methods import SeleniumMethods
 class BasePage(SeleniumMethods):
 
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.timeout = 30

@@ -38,7 +38,7 @@ class TestAlertPage():
 
     @pytest.mark.sanity
     @pytest.mark.parametrize("data", [('OK', 'true'), ('Cancel', 'false')])
-    def test_03_confirm_alert_example(self, setup_driver):
+    def test_03_confirm_alert_example(self, setup_driver, data):
         """Tests Confirm Alert example"""
         self.driver = setup_driver
         alert_page = AlertPage(self.driver)
@@ -47,9 +47,32 @@ class TestAlertPage():
         expected_text = 'I am a confirm alert'
         assert text == expected_text, (f'[FAILURE] Expected Text - {expected_text}'
                                        f'Actual Text - {text}')
-
-        alert_page.accept_alert_popup()
+        if data[0] == 'OK':
+            alert_page.accept_alert_popup()
+        elif data[0] == 'Cancel':
+            alert_page.dismiss_alert_popup()
         alert_explanation_text = alert_page.show_confirm_explanation_text()
-        expected_text = 'You clicked OK, confirm returned true.'
+        expected_text = f'You clicked {data[0]}, confirm returned {data[1]}.'
+        assert expected_text == alert_explanation_text, (f'[FAILURE] Expected Text - {expected_text}'
+                                       f'\nActual Text - {alert_explanation_text}')
+
+    @pytest.mark.regression
+    @pytest.mark.parametrize("data", [('OK', 'New Message'), ('Cancel', 'null')])
+    def test_03_confirm_alert_example(self, setup_driver, data):
+        """Tests Confirm Alert example"""
+        self.driver = setup_driver
+        alert_page = AlertPage(self.driver)
+        alert_page.click_show_prompt_box()
+        text = alert_page.show_alert_text()
+        expected_text = 'I prompt you'
+        assert text == expected_text, (f'[FAILURE] Expected Text - {expected_text}'
+                                       f'Actual Text - {text}')
+        if data[0] == 'OK':
+            alert_page.send_prompt_in_alert(data[1])
+            alert_page.accept_alert_popup()
+        elif data[0] == 'Cancel':
+            alert_page.dismiss_alert_popup()
+        alert_explanation_text = alert_page.show_prompt_text()
+        expected_text = f"You clicked {data[0]}. 'prompt' returned {data[1]}"
         assert expected_text == alert_explanation_text, (f'[FAILURE] Expected Text - {expected_text}'
                                        f'\nActual Text - {alert_explanation_text}')

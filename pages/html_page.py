@@ -10,6 +10,13 @@ logger = logging.getLogger(__name__)
 
 
 class HtmlPage(BasePage):
+    """
+    This class represents the HTML Page on Test Pages.
+    It provides methods to interact with various form elements and retrieve their values.
+
+    Attributes:
+        driver (WebDriver): The WebDriver instance used to interact with the page.
+    """
 
     # Locators
     LIST_OF_EXAMPLES = (By.TAG_NAME, 'li')
@@ -70,7 +77,7 @@ class HtmlPage(BasePage):
                 """
         try:
             # Use the base class method for finding and interacting with element
-            username_element = self._wait_and_find_element(self.USERNAME)
+            username_element = self.find_element(self.USERNAME)
 
             # Clear existing text (if any)
             username_element.clear()
