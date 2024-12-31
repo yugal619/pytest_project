@@ -1,5 +1,7 @@
 from selenium import webdriver
 import logging
+from utils.path_creator import PathCreator
+from selenium.webdriver import ChromeService
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -13,10 +15,12 @@ class BrowserFactory:
         """
         if browser == "chrome":
             # Setup Chrome browser
+            chromedriver_path = PathCreator.relative_path_creator(file_path="chromedriver/chromedriver")
+            service = ChromeService(executable_path=chromedriver_path)
             options = webdriver.ChromeOptions()
             options.add_argument("--start-maximized")
             options.add_argument("--disable-extensions")
-            return webdriver.Chrome(options=options)
+            return webdriver.Chrome(options=options, service=service)
 
         elif browser == "firefox":
             # Setup Firefox browser

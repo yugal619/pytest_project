@@ -1,5 +1,7 @@
 import pytest
 from selenium import webdriver
+# from selenium.webdriver.common.service import
+from selenium.webdriver import ChromeService
 import logging
 from utils.browser_factory import BrowserFactory
 import time
@@ -8,14 +10,16 @@ from utils.path_creator import PathCreator
 # Create a logger for this module
 logger = logging.getLogger(__name__)
 
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome")
+
 
 @pytest.fixture(scope='session')
 def setup_driver(request):
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-    options.add_argument("--disable-extensions")
-    driver = webdriver.Chrome(options=options)
+    # Create WebDriver instance
     logger.info("Setup Driver")
+    browser = request.config.getoption("--browser")
+    driver = BrowserFactory.get_driver(browser)
     yield driver
     driver.close()
     driver.quit()
