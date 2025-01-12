@@ -1,12 +1,28 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.13.0-alpine3.20' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Checkout Code') {
             steps {
-                sh 'python --version'
+                git branch: 'main', url: 'https://github.com/yugal619/pytest_project.git'
+            }
+        }
+        stage('Setup Environment') {
+            steps {
+                sh '''
+                python3 -m venv virtualenv
+                . virtualenv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh '''
+                . virtualenv/bin/activate
+                pytest
+                '''
             }
         }
     }
-}
 }
